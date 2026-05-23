@@ -1,0 +1,38 @@
+public class Word
+{
+    private string _text;
+    private bool _isHidden;
+    public Word(string text)
+    {
+        _text=text;
+        _isHidden=false;
+    }
+    public void Hide()
+    {
+        _isHidden=true;
+    }
+    public void Show()
+    {
+        _isHidden=false;
+    }
+    public string GetDisplayText()
+    {
+        string textToDisplay="";
+        if (_isHidden)
+        {
+            foreach (char c in _text)
+            {
+                textToDisplay=textToDisplay+"_";
+            }
+        }
+        else
+        {
+            textToDisplay=_text;
+        }
+        return textToDisplay;
+    }
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+}
